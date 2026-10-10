@@ -128,7 +128,8 @@ def business_ld(area=None, page_url=None):
         },
         "address": {"@type": "PostalAddress", "addressLocality": "Simultala", "addressRegion": "Bihar",
                     "postalCode": "811316", "addressCountry": "IN"},
-        "hasMap": "https://www.google.com/maps/search/?api=1&query=Simultala%2C+Jamui%2C+Bihar+811316",
+        "hasMap": "https://share.google/q4A3YEuAPNPlMQWhH",
+        "sameAs": ["https://www.google.com/search?kgmid=/g/11zy8x69f1"],
         "geo": {"@type": "GeoCoordinates", "latitude": 24.70, "longitude": 86.57},
         "areaServed": area or [{"@type": "City", "name": f"{l[0]}, {l[3]}"} for l in LOCATIONS],
         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Taxi services", "itemListElement": [
