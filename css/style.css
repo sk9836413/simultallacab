@@ -491,3 +491,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .sign, .faq summary::after { transition: none; }
   .btn, .plate { transition: none; }
 }
+
+/* Coverage links grouped by district */
+.loc-tour { margin-bottom: 24px; }
+.loc-groups { display: grid; gap: 18px 32px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.loc-group h4 { font-size: 1.05rem; color: var(--forest); margin-bottom: 8px; }
+.loc-group h4 small { font: 500 .85rem var(--body); color: var(--muted); margin-left: 4px; }

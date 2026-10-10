@@ -77,6 +77,112 @@ LOCATIONS = [
      "गोड्डा से देवघर, भागलपुर और सिमुलतला के लिए टैक्सी।"),
 ]
 
+# Deoghar se 100 km ke andar ki aur jagahen (doori geo_cache.json se nikalti hai)
+DB, JH, WB = "बाबा धाम, देवघर", "Jharkhand", "West Bengal"
+LOCATIONS += [
+    ("Hansdiha", "हंसडीहा", "Dumka", JH, None, [], ["बासुकीनाथ धाम", DB],
+     "हंसडीहा चौक NH-133 पर है &ndash; यहाँ से देवघर, दुमका, गोड्डा और भागलपुर चारों तरफ़ के लिए हमारी गाड़ी मिलती है।"),
+    ("Sarath", "सारठ", "Deoghar", JH, None, [], [DB, "तपोवन"],
+     "सारठ से देवघर, मधुपुर और चितरा के लिए लोकल और रिज़र्व टैक्सी।"),
+    ("Palojori", "पालोजोरी", "Deoghar", JH, None, [], [DB, "मसानजोर डैम"],
+     "पालोजोरी से देवघर, जामताड़ा और दुमका जाने के लिए आरामदायक गाड़ी।"),
+    ("Mohanpur", "मोहनपुर", "Deoghar", JH, None, [], [DB, "त्रिकूट पर्वत", "तपोवन"],
+     "देवघर शहर से सटे मोहनपुर से बाबा धाम, जसीडीह स्टेशन और एयरपोर्ट तक टैक्सी।"),
+    ("Sarwan", "सरवां", "Deoghar", JH, None, [], [DB, "नौलखा मंदिर"],
+     "सरवां से बाबा धाम दर्शन और जसीडीह स्टेशन के लिए गाड़ी, दिन हो या रात।"),
+    ("Karon", "करौं", "Deoghar", JH, None, [], [DB, "पत्थरचपटी, मधुपुर"],
+     "करौं से देवघर, मधुपुर और जामताड़ा के लिए टैक्सी।"),
+    ("Devipur", "देवीपुर", "Deoghar", JH, None, [], [DB, "AIIMS देवघर"],
+     "AIIMS देवघर देवीपुर में है &ndash; मरीज़ों और उनके परिवार के लिए 24 घंटे टैक्सी, स्टेशन और घर तक।"),
+    ("Margomunda", "मारगोमुंडा", "Deoghar", JH, None, [], [DB, "उसरी फॉल, गिरिडीह"],
+     "मारगोमुंडा से मधुपुर, देवघर और गिरिडीह के लिए गाड़ी।"),
+    ("Jarmundi", "जरमुंडी", "Dumka", JH, None, [], ["बासुकीनाथ धाम", DB],
+     "बासुकीनाथ धाम जरमुंडी में ही है &ndash; बासुकीनाथ और बाबा धाम, दोनों दर्शन एक ही गाड़ी में।"),
+    ("Saraiyahat", "सरैयाहाट", "Dumka", JH, None, [], ["बासुकीनाथ धाम", DB],
+     "सरैयाहाट से देवघर, हंसडीहा और दुमका के लिए टैक्सी।"),
+    ("Shikaripara", "शिकारीपाड़ा", "Dumka", JH, None, [], ["मलूटी मंदिर", "मसानजोर डैम"],
+     "मलूटी के प्राचीन मंदिर देखने और दुमका, देवघर जाने के लिए गाड़ी।"),
+    ("Masalia", "मसलिया", "Dumka", JH, None, [], ["मसानजोर डैम", "बासुकीनाथ धाम"],
+     "मसलिया से दुमका, जामताड़ा और देवघर के लिए टैक्सी।"),
+    ("Jama", "जामा", "Dumka", JH, None, [], ["बासुकीनाथ धाम", DB],
+     "जामा से दुमका, बासुकीनाथ और देवघर के लिए गाड़ी।"),
+    ("Mihijam", "मिहिजाम", "Jamtara", JH, None, ["Chittaranjan"], ["कल्याणेश्वरी मंदिर", DB],
+     "मिहिजाम और चित्तरंजन स्टेशन से देवघर, जामताड़ा और आसनसोल के लिए टैक्सी।"),
+    ("Karmatanr", "करमाटांड़", "Jamtara", JH, None, ["Vidyasagar (Karmatanr)"], ["विद्यासागर का नंदन कानन", DB],
+     "विद्यासागर स्टेशन (करमाटांड़) पर पिकअप, और देवघर, जामताड़ा के लिए गाड़ी।"),
+    ("Nala", "नाला", "Jamtara", JH, None, [], [DB, "मसानजोर डैम"],
+     "नाला से जामताड़ा, दुमका और देवघर के लिए टैक्सी।"),
+    ("Kundahit", "कुंडहित", "Jamtara", JH, None, [], [DB],
+     "कुंडहित से जामताड़ा, देवघर और आसनसोल के लिए गाड़ी।"),
+    ("Narayanpur", "नारायणपुर", "Jamtara", JH, None, [], [DB],
+     "नारायणपुर से जामताड़ा, देवघर और धनबाद के लिए टैक्सी।"),
+    ("Mahagama", "महगामा", "Godda", JH, None, [], ["मंदार पर्वत", DB],
+     "महगामा से गोड्डा, भागलपुर और देवघर के लिए टैक्सी।"),
+    ("Pathargama", "पथरगामा", "Godda", JH, None, [], [DB, "बासुकीनाथ धाम"],
+     "पथरगामा से गोड्डा, हंसडीहा और देवघर के लिए गाड़ी।"),
+    ("Poreyahat", "पोड़ैयाहाट", "Godda", JH, None, [], [DB, "बासुकीनाथ धाम"],
+     "पोड़ैयाहाट से हंसडीहा, गोड्डा और देवघर के लिए टैक्सी।"),
+    ("Sundarpahari", "सुंदरपहाड़ी", "Godda", JH, None, [], [DB],
+     "सुंदरपहाड़ी से गोड्डा, दुमका और देवघर के लिए गाड़ी।"),
+    ("Boarijor", "बोआरीजोर", "Godda", JH, None, [], [DB],
+     "बोआरीजोर से गोड्डा, भागलपुर और देवघर के लिए टैक्सी।"),
+    ("Pakur", "पाकुड़", "Pakur", JH, None, ["Pakur"], [DB, "बासुकीनाथ धाम"],
+     "पाकुड़ से देवघर, दुमका और बासुकीनाथ के लिए आउटस्टेशन टैक्सी।"),
+    ("Jamua", "जमुआ", "Giridih", JH, None, [], ["पारसनाथ / मधुबन", DB],
+     "जमुआ से गिरिडीह, देवघर और कोडरमा के लिए टैक्सी।"),
+    ("Bengabad", "बेंगाबाद", "Giridih", JH, None, [], [DB, "उसरी फॉल"],
+     "बेंगाबाद से गिरिडीह, मधुपुर और देवघर के लिए गाड़ी।"),
+    ("Gandey", "गांडेय", "Giridih", JH, None, [], ["उसरी फॉल", DB],
+     "गांडेय से गिरिडीह और देवघर के लिए टैक्सी।"),
+    ("Tisri", "तिसरी", "Giridih", JH, None, [], ["पारसनाथ / मधुबन", DB],
+     "तिसरी से गिरिडीह, देवघर और जमुई के लिए गाड़ी।"),
+    ("Deori", "देवरी", "Giridih", JH, None, [], ["पारसनाथ / मधुबन", DB],
+     "देवरी से गिरिडीह, चकाई और देवघर के लिए टैक्सी।"),
+    ("Madhuban", "मधुबन (पारसनाथ)", "Giridih", JH, None, ["Parasnath"], ["सम्मेद शिखरजी", "पारसनाथ पहाड़"],
+     "सम्मेद शिखरजी (पारसनाथ) की यात्रा &ndash; जैन तीर्थ यात्रियों के लिए देवघर, गिरिडीह और पारसनाथ स्टेशन से गाड़ी।"),
+    ("Dhanbad", "धनबाद", "Dhanbad", JH, None, ["Dhanbad Junction"], ["मैथन डैम", "पंचेत डैम", DB],
+     "धनबाद जंक्शन से देवघर, बाबा धाम और गिरिडीह के लिए one-way और round trip टैक्सी।"),
+    ("Nirsa", "निरसा", "Dhanbad", JH, None, [], ["मैथन डैम", "कल्याणेश्वरी मंदिर"],
+     "निरसा और मैथन से देवघर, धनबाद और आसनसोल के लिए गाड़ी।"),
+    ("Chittaranjan", "चित्तरंजन", "Paschim Bardhaman", WB, None, ["Chittaranjan"], ["कल्याणेश्वरी मंदिर", DB],
+     "चित्तरंजन स्टेशन से देवघर, जामताड़ा और आसनसोल के लिए टैक्सी।"),
+    ("Asansol", "आसनसोल", "Paschim Bardhaman", WB, None, ["Asansol Junction"], ["कल्याणेश्वरी मंदिर", "मैथन डैम", DB],
+     "आसनसोल जंक्शन से बाबा धाम देवघर और बासुकीनाथ के लिए one-way और round trip टैक्सी।"),
+    ("Bounsi", "बौंसी", "Banka", "Bihar", None, [], ["मंदार पर्वत", DB],
+     "मंदार पर्वत बौंसी में है &ndash; मंदार दर्शन और देवघर, भागलपुर के लिए गाड़ी।"),
+    ("Amarpur", "अमरपुर", "Banka", "Bihar", None, [], ["मंदार पर्वत", "अजगैबीनाथ, सुल्तानगंज"],
+     "अमरपुर से बांका, भागलपुर और देवघर के लिए टैक्सी।"),
+    ("Belhar", "बेलहर", "Banka", "Bihar", None, [], [DB, "मंदार पर्वत"],
+     "बेलहर से बांका, सुल्तानगंज और देवघर के लिए गाड़ी।"),
+    ("Chandan", "चांदन", "Banka", "Bihar", None, [], [DB, "मंदार पर्वत"],
+     "चांदन से कटोरिया, देवघर और बांका के लिए टैक्सी।"),
+    ("Dhoraiya", "धोरैया", "Banka", "Bihar", None, [], ["मंदार पर्वत", DB],
+     "धोरैया से बांका, भागलपुर और देवघर के लिए गाड़ी।"),
+    ("Tarapur", "तारापुर", "Munger", "Bihar", None, [], ["अजगैबीनाथ, सुल्तानगंज", DB],
+     "तारापुर से सुल्तानगंज, मुंगेर और देवघर के लिए टैक्सी।"),
+    ("Sono", "सोनो", "Jamui", "Bihar", None, [], ["लट्टू पहाड़, सिमुलतला", DB],
+     "सोनो से झाझा, जमुई, चकाई और देवघर के लिए गाड़ी।"),
+    ("Khaira", "खैरा", "Jamui", "Bihar", None, [], ["लछुआड़ जैन मंदिर", "मिंटो टावर, गिद्धौर"],
+     "खैरा से जमुई, सिकंदरा और देवघर के लिए टैक्सी।"),
+    ("Laxmipur", "लक्ष्मीपुर", "Jamui", "Bihar", None, [], ["लट्टू पहाड़, सिमुलतला", DB],
+     "लक्ष्मीपुर से जमुई, झाझा और देवघर के लिए गाड़ी।"),
+    ("Barhat", "बरहट", "Jamui", "Bihar", None, [], ["लछुआड़ जैन मंदिर", DB],
+     "बरहट से जमुई, लखीसराय और देवघर के लिए टैक्सी।"),
+]
+GEO = json.loads((ROOT / "geo_cache.json").read_text(encoding="utf-8"))
+STATE_HI = {"Bihar": "बिहार", "Jharkhand": "झारखंड", "West Bengal": "पश्चिम बंगाल"}
+
+
+def km_between(a, b):
+    import math
+    (la1, lo1), (la2, lo2) = [tuple(map(math.radians, GEO[x][:2])) for x in (a, b)]
+    h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
+    return 6371 * 2 * math.asin(math.sqrt(h))
+
+
+def nearest(en, n=14):
+    return sorted((l for l in LOCATIONS if l[0] != en), key=lambda l: km_between(en, l[0]))[:n]
+
 SERVICES = [
     ("लोकल टैक्सी", "local taxi"),
     ("रेलवे स्टेशन पिकअप / ड्रॉप", "railway station pickup and drop"),
@@ -199,7 +305,7 @@ def load_template():
 
 def location_page(loc):
     en, hi, district, state, km, stations, sights, note = loc
-    state_hi = "बिहार" if state == "Bihar" else "झारखंड"
+    state_hi = STATE_HI[state]
     canonical = url(slug(en))
     title = f"{en} Taxi Service | {hi} टैक्सी सर्विस, Cab Booking ₹1500 से – {BRAND}"
     desc = (f"{en} taxi service – {hi} में 24 घंटे टैक्सी: लोकल, स्टेशन पिकअप, Deoghar darshan, airport, "
@@ -210,8 +316,12 @@ def location_page(loc):
         f"{en} car rental", f"{en} taxi number", f"taxi in {en}", f"cab in {en}", f"{hi} टैक्सी", f"{hi} कैब",
         f"{hi} टैक्सी सर्विस", f"{hi} गाड़ी बुकिंग", f"{en} to Deoghar taxi", f"{en} to Patna taxi",
         f"{en} to Ranchi taxi", f"{en} outstation cab", f"{en} railway station taxi", f"{district} taxi",
-        f"{en} wedding car", f"{en} tour and travels", "Simultala Cab Service"])
-    dist_line = (f"सिमुलतला से {hi} की दूरी लगभग {km} km है।" if km else "")
+        f"{en} wedding car", f"{en} tour and travels", f"{en} tour package", f"{en} to Basukinath taxi",
+        f"{en} to Jasidih taxi", f"{en} to Simultala taxi", f"{hi} से देवघर टैक्सी", "Simultala Cab Service"])
+    if km:
+        dist_line = f"सिमुलतला से {hi} की दूरी लगभग {km} km है।"
+    else:
+        dist_line = f"देवघर से {hi} लगभग {max(5, round(km_between('Deoghar', en) / 5) * 5)} km (सीधी दूरी) पर है।"
     stations_line = (f"स्टेशन पिकअप: {', '.join(stations)}।" if stations else "")
     faqs = [
         (f"{hi} में टैक्सी का किराया कितना है?",
@@ -233,7 +343,8 @@ def location_page(loc):
               <svg class="sign__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M12 5l7 7-7 7"/></svg>
             </a></li>''' for ten, thi in ROUTE_TARGETS if ten != en)
     sights_html = "".join(f"<li>{s}</li>" for s in sights)
-    others = "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi</a></li>' for l in LOCATIONS if l[0] != en)
+    others = "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi</a></li>' for l in nearest(en)) + (
+        '<li><a href="deoghar-tour-package.html">Deoghar Tour Package</a></li><li><a href="index.html#area">सभी शहर</a></li>')
     faq_html = "".join(f'''
           <details>
             <summary>{q}</summary>
@@ -336,17 +447,142 @@ def location_page(loc):
 {TAIL}'''
 
 
+# ---------------------------------------------------------------- tour package page
+TOUR_SLUG = "deoghar-tour-package.html"
+
+
+def tour_page():
+    t = (ROOT / "index.html").read_text(encoding="utf-8")
+    packages = re.search(r'        <ul class="packages">.*?\n        </ul>', t, flags=re.S).group(0)
+    canonical = url(TOUR_SLUG)
+    title = "Deoghar Tour Package | देवघर टूर पैकेज, बाबा धाम दर्शन टैक्सी – Simultala Cab Service"
+    desc = ("Deoghar tour package – बाबा धाम दर्शन, देवघर + बासुकीनाथ, पूरा देवघर टूर (होटल सहित), सिमुलतला प्रकृति दर्शन, "
+            "मंदार पर्वत और पारसनाथ जैन यात्रा। गाड़ी, ड्राइवर, पेट्रोल शामिल, ₹1500 से शुरू। "
+            f"Call {PHONE_PRETTY}.")
+    keywords = ", ".join([
+        "Deoghar tour package", "Baba Dham tour package", "Baidyanath Dham tour package", "Deoghar Basukinath tour package",
+        "Deoghar sightseeing taxi", "Deoghar local sightseeing", "Deoghar darshan taxi", "Deoghar one day tour",
+        "Deoghar 2 days tour package", "Deoghar tour package with hotel", "Basukinath tour package", "Trikut Parvat taxi",
+        "Tapovan Deoghar taxi", "Shravani Mela taxi", "Kanwar yatra taxi Sultanganj to Deoghar", "Simultala tour package",
+        "Mandar Parvat tour", "Parasnath tour package", "Shikharji tour package", "Jasidih to Deoghar taxi",
+        "देवघर टूर पैकेज", "बाबा धाम टूर पैकेज", "देवघर दर्शन टैक्सी", "बासुकीनाथ टूर", "देवघर घूमने के लिए गाड़ी",
+        "श्रावणी मेला टैक्सी", "Simultala Cab Service"])
+    faqs = [
+        ("देवघर टूर पैकेज में क्या-क्या शामिल है?",
+         "गाड़ी, ड्राइवर और पेट्रोल शामिल है। पूरा रूट पहले से तय होता है और दर्शन के समय ड्राइवर इंतज़ार करता है। होटल किसी भी पैकेज में जोड़ा जा सकता है।"),
+        ("एक दिन में देवघर में क्या-क्या घूम सकते हैं?",
+         "बाबा बैद्यनाथ धाम, नौलखा मंदिर, तपोवन, त्रिकूट पर्वत और सत्संग आश्रम एक दिन में आराम से हो जाते हैं। बासुकीनाथ जोड़ना हो तो पूरा दिन लगता है।"),
+        ("देवघर टूर पैकेज की कीमत क्या है?",
+         f"पैकेज ₹1500 से शुरू होते हैं। सही कीमत दिन, गाड़ी और होटल देखकर फ़ोन पर बताई जाती है &ndash; कॉल करें {PHONE_PRETTY}।"),
+        ("क्या जसीडीह स्टेशन या देवघर एयरपोर्ट से पिकअप मिलेगा?",
+         "हाँ। जसीडीह जंक्शन, देवघर एयरपोर्ट, मधुपुर, झाझा या सिमुलतला &ndash; जहाँ उतरें, वहीं से टूर शुरू होता है।"),
+    ]
+    faq_html = "".join(f'''
+          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>''' for q, a in faqs)
+    breadcrumb = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": BRAND, "item": url()},
+        {"@type": "ListItem", "position": 2, "name": "Deoghar Tour Package", "item": canonical}]}
+    biz = business_ld(area=[{"@type": "City", "name": "Deoghar, Jharkhand"}], page_url=canonical)
+    from_links = "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi</a></li>' for l in nearest("Deoghar", 20))
+    return f'''<!DOCTYPE html>
+<html lang="hi">
+<head>
+{common_head(title, desc, keywords, canonical)}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+{ld_script(biz, breadcrumb, faq_ld(faqs))}
+</head>
+<body>
+
+{SPRITE}{HEADER}  <main id="top">
+    <section class="hero loc-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">{BRAND}</a> <span aria-hidden="true">/</span> Deoghar Tour Package</nav>
+        <p class="hero__place">देवघर, झारखंड <span class="hero__badge">10+ साल, 50+ गाड़ियाँ, 1,00,000+ सफ़र</span></p>
+        <h1>देवघर टूर पैकेज</h1>
+        <p class="loc-hero__en">Deoghar Tour Package &amp; Baba Dham Darshan Taxi</p>
+        <p class="hero__lede">बाबा बैद्यनाथ धाम, बासुकीनाथ, तपोवन, त्रिकूट और नौलखा मंदिर &ndash; पूरा रूट हम तय करते हैं, ड्राइवर हर जगह इंतज़ार करता है। होटल भी साथ में बुक हो जाता है।</p>
+        <a class="plate" data-call href="{tel()}" aria-label="कॉल करें">
+          <span class="plate__label">पैकेज के लिए कॉल करें</span>
+          <span class="plate__num" data-phone-text>{PHONE_PRETTY}</span>
+        </a>
+        <div class="hero__row">
+          {WA_BTN.replace('data-wa ', 'data-wa data-msg="देवघर टूर पैकेज" ', 1)}
+          <p class="hero__price">पैकेज <strong>₹1500</strong> से शुरू<sup>*</sup></p>
+        </div>
+        <p class="hero__note">* पूरी कीमत दिन, गाड़ी और होटल देखकर फ़ोन पर बताई जाती है।</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="head">
+          <h2>सभी टूर पैकेज</h2>
+          <p>Car, driver and fuel included. Hotel can be added to any package.</p>
+        </div>
+{packages}
+      </div>
+    </section>
+
+    <section class="section section--mist" id="faq">
+      <div class="wrap faq">
+        <div class="head">
+          <h2>देवघर टूर: सवाल-जवाब</h2>
+          <p>Deoghar tour package FAQs</p>
+        </div>
+        <div class="faq__list">{faq_html}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="head">
+          <h2>कहीं से भी टूर शुरू करें</h2>
+          <p>Pickup from any town within 100 km of Deoghar and Simultala.</p>
+        </div>
+        <ul class="loc-links">{from_links}<li><a href="index.html#area">सभी शहर</a></li></ul>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap final__in">
+        <h2>देवघर घूमना है? अभी कॉल कीजिए।</h2>
+        <a class="plate plate--dark" data-call href="{tel()}" aria-label="कॉल करें">
+          <span class="plate__label">कॉल करें</span>
+          <span class="plate__num" data-phone-text>{PHONE_PRETTY}</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+{TAIL}'''
+
+
 # ---------------------------------------------------------------- index.html
 def patch_index():
     p = ROOT / "index.html"
     s = p.read_text(encoding="utf-8")
     places = ", ".join(l[0] for l in LOCATIONS[1:13])
-    title = f"Simultala Cab Service | सिमुलतला टैक्सी सर्विस – Jhajha, Jamui, Deoghar, Jasidih Taxi ₹1500 से"
-    desc = ("Simultala Cab Service – 10+ साल, 50+ गाड़ियाँ, 1,00,000+ सफ़र। सिमुलतला से 100 km तक हर जगह टैक्सी: "
-            f"{places}, Giridih, Basukinath, Dumka, Jamtara, Godda। Deoghar darshan, station pickup, airport, outstation cab, "
-            f"tour package, hotel booking. किराया ₹1500 से शुरू। Call {PHONE_PRETTY}.")
+    title = "Simultala Cab Service | Deoghar Taxi Service, Simultala Taxi, Hansdiha Taxi &amp; Deoghar Tour Package"
+    desc = ("Simultala Cab Service – देवघर और सिमुलतला से 100 km तक हर जगह टैक्सी। Deoghar taxi service, Simultala taxi, "
+            "Hansdiha, Jasidih, Jhajha, Jamui, Basukinath, Dumka, Giridih, Dhanbad taxi। Deoghar tour package, बाबा धाम दर्शन, "
+            f"station pickup, airport, outstation cab, hotel booking. 10+ साल, 50+ गाड़ियाँ। ₹1500 से। Call {PHONE_PRETTY}.")
     kw_match = re.search(r'<meta name="keywords" content="(.*?)">', s)
-    keywords = kw_match.group(1) if kw_match else ""
+    keywords = [k.strip() for k in (kw_match.group(1) if kw_match else "").split(",") if k.strip()]
+    extra = ["Deoghar taxi service", "Simultala taxi service", "Hansdiha taxi service", "Deoghar cab service",
+             "Deoghar tour package", "Baba Dham tour package", "Deoghar Basukinath tour package", "Deoghar sightseeing taxi",
+             "Deoghar airport taxi", "AIIMS Deoghar taxi", "Jasidih to Deoghar taxi", "Deoghar to Basukinath taxi",
+             "Deoghar to Patna taxi", "Deoghar to Ranchi taxi", "Deoghar to Kolkata taxi", "Deoghar to Dhanbad taxi",
+             "Shravani Mela taxi", "Simultala tour package", "Parasnath tour package",
+             "देवघर टैक्सी सर्विस", "सिमुलतला टैक्सी सर्विस", "हंसडीहा टैक्सी सर्विस", "देवघर टूर पैकेज", "बाबा धाम टूर पैकेज"]
+    extra += [f"{l[0]} taxi service" for l in LOCATIONS] + [f"{l[1]} टैक्सी" for l in LOCATIONS]
+    keywords = ", ".join(dict.fromkeys(keywords + extra))
     head_new = common_head(title, desc, keywords, url())
 
     start = s.index("<head>") + len("<head>\n")
@@ -358,15 +594,25 @@ def patch_index():
     website = {"@context": "https://schema.org", "@type": "WebSite", "name": BRAND, "alternateName": BRAND_HI, "url": url(),
                "inLanguage": ["hi-IN", "en-IN"]}
     old = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', s, flags=re.S).group(1))
-    biz = business_ld(area=old.get("areaServed"))
+    area = old.get("areaServed") or []
+    names = {a["name"].split(",")[0] for a in area}
+    area += [{"@type": "Place", "name": f"{l[0]}, {l[3]}"} for l in LOCATIONS if l[0] not in names]
+    biz = business_ld(area=area)
     biz["description"] = old.get("description", "")
     ld = ld_script(biz, faq_ld(faqs), website)
     s = re.sub(r'(  <script type="application/ld\+json">.*?</script>\n)+', lambda m: ld + "\n", s, count=1, flags=re.S)
 
     # location page links (inside coverage section)
-    links = "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi Service</a></li>' for l in LOCATIONS)
-    block = (f'<!-- LOC-LINKS:START -->\n        <h3 class="districts__title">शहर के हिसाब से टैक्सी</h3>\n'
-             f'        <ul class="loc-links">{links}</ul>\n        <!-- LOC-LINKS:END -->')
+    groups = {}
+    for l in LOCATIONS:
+        groups.setdefault((l[2], l[3]), []).append(l)
+    links = "".join(
+        f'\n          <div class="loc-group"><h4>{d} <small>{STATE_HI[st]}</small></h4><ul class="loc-links">'
+        + "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi</a></li>' for l in ls) + "</ul></div>"
+        for (d, st), ls in groups.items())
+    block = (f'<!-- LOC-LINKS:START -->\n        <h3 class="districts__title">देवघर और सिमुलतला से 100 km तक: शहर के हिसाब से टैक्सी</h3>\n'
+             f'        <p class="loc-tour"><a class="btn btn--ink" href="{TOUR_SLUG}">देवघर टूर पैकेज देखें</a></p>\n'
+             f'        <div class="loc-groups">{links}\n        </div>\n        <!-- LOC-LINKS:END -->')
     if "<!-- LOC-LINKS:START -->" in s:
         s = re.sub(r"<!-- LOC-LINKS:START -->.*?<!-- LOC-LINKS:END -->", lambda m: block, s, flags=re.S)
     else:
@@ -441,7 +687,8 @@ def main():
         (ROOT / slug(loc[0])).write_text(phone_fix(location_page(loc)), encoding="utf-8")
         pages.append(slug(loc[0]))
 
-    entries = [(url(), "1.0", "daily")] + [(url(p), "0.8", "weekly") for p in pages]
+    (ROOT / TOUR_SLUG).write_text(phone_fix(tour_page()), encoding="utf-8")
+    entries = [(url(), "1.0", "daily"), (url(TOUR_SLUG), "0.9", "weekly")] + [(url(p), "0.8", "weekly") for p in pages]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc_url, prio, freq in entries:
