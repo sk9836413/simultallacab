@@ -1,3 +1,5 @@
 .claude/
 *.zip
 __pycache__/
+gbp-photos/
+make_gbp_photos.py
