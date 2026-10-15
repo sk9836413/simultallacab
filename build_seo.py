@@ -192,6 +192,7 @@ SERVICES = [
     ("टूर पैकेज", "tour packages"),
     ("होटल बुकिंग", "hotel booking"),
     ("शादी और बारात की गाड़ी", "wedding car rental"),
+    ("ड्राइवर हायर (आपकी अपनी गाड़ी)", "driver on hire"),
 ]
 ROUTE_TARGETS = [("Deoghar", "देवघर"), ("Patna", "पटना"), ("Ranchi", "राँची"), ("Kolkata", "कोलकाता"),
                  ("Bhagalpur", "भागलपुर"), ("Dhanbad", "धनबाद"), ("Gaya", "गया"), ("Jasidih", "जसीडीह")]
@@ -297,7 +298,7 @@ def load_template():
     t = (ROOT / "index.html").read_text(encoding="utf-8")
     HEADER = t[t.index('  <header class="topbar">'):t.index('  <main id="top">')]
     HEADER = HEADER.replace('href="#top"', 'href="index.html"')
-    for sec in ["services", "packages", "outstation", "hotel", "area", "book"]:
+    for sec in ["services", "packages", "outstation", "hotel", "driver", "area", "book"]:
         HEADER = HEADER.replace(f'href="#{sec}"', f'href="index.html#{sec}"')
     SPRITE = t[t.index('  <!-- Car drawings'):t.index('  <header class="topbar">')]
     TAIL = t[t.index('  <footer class="footer">'):]
@@ -317,7 +318,8 @@ def location_page(loc):
         f"{hi} टैक्सी सर्विस", f"{hi} गाड़ी बुकिंग", f"{en} to Deoghar taxi", f"{en} to Patna taxi",
         f"{en} to Ranchi taxi", f"{en} outstation cab", f"{en} railway station taxi", f"{district} taxi",
         f"{en} wedding car", f"{en} tour and travels", f"{en} tour package", f"{en} to Basukinath taxi",
-        f"{en} to Jasidih taxi", f"{en} to Simultala taxi", f"{hi} से देवघर टैक्सी", "Simultala Cab Service"])
+        f"{en} to Jasidih taxi", f"{en} to Simultala taxi", f"{hi} से देवघर टैक्सी", f"{en} driver on hire",
+        f"{en} acting driver", f"driver in {en}", f"{hi} ड्राइवर चाहिए", "Simultala Cab Service"])
     if km:
         dist_line = f"सिमुलतला से {hi} की दूरी लगभग {km} km है।"
     else:
@@ -333,6 +335,8 @@ def location_page(loc):
          f"हाँ, {BRAND} 24 घंटे चलती है। रात की ट्रेन, सुबह की फ्लाइट या इमरजेंसी के लिए कभी भी कॉल करें।"),
         (f"{hi} से आउटस्टेशन कैब कहाँ-कहाँ जाती है?",
          f"{hi} से पटना, राँची, कोलकाता, गया, धनबाद, भागलपुर, वाराणसी और देश में कहीं भी one-way या round trip कैब मिलती है।"),
+        (f"क्या {hi} में अपनी गाड़ी के लिए ड्राइवर मिलेगा?",
+         f"हाँ। {hi} में कुछ घंटों, पूरे दिन, बाहर के सफ़र या महीने भर के लिए अनुभवी ड्राइवर मिलता है &ndash; गाड़ी आपकी, ड्राइवर हमारा।"),
     ]
     services = "".join(
         f'<li><a data-call href="{tel()}"><strong>{shi}</strong><span>{en} {sen}</span></a></li>' for shi, sen in SERVICES)
@@ -344,7 +348,8 @@ def location_page(loc):
             </a></li>''' for ten, thi in ROUTE_TARGETS if ten != en)
     sights_html = "".join(f"<li>{s}</li>" for s in sights)
     others = "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi</a></li>' for l in nearest(en)) + (
-        '<li><a href="deoghar-tour-package.html">Deoghar Tour Package</a></li><li><a href="index.html#area">सभी शहर</a></li>')
+        '<li><a href="deoghar-tour-package.html">Deoghar Tour Package</a></li><li><a href="driver-on-hire.html">Driver on Hire</a></li>'
+        '<li><a href="index.html#area">सभी शहर</a></li>')
     faq_html = "".join(f'''
           <details>
             <summary>{q}</summary>
@@ -564,6 +569,133 @@ def tour_page():
 {TAIL}'''
 
 
+# ---------------------------------------------------------------- driver on hire page
+DRIVER_SLUG = "driver-on-hire.html"
+
+
+def driver_page():
+    t = (ROOT / "index.html").read_text(encoding="utf-8")
+    types = re.search(r'        <ul class="trip-types driver-types">.*?</ul>', t, flags=re.S).group(0)
+    points = re.search(r'          <ul class="driver__points">.*?</ul>', t, flags=re.S).group(0)
+    canonical = url(DRIVER_SLUG)
+    title = "Driver on Hire Deoghar, Simultala | ड्राइवर हायर – गाड़ी आपकी, ड्राइवर हमारा"
+    desc = ("Driver on hire in Deoghar, Simultala, Jasidih, Jhajha and 100 km around – अपनी गाड़ी के लिए ड्राइवर: कुछ घंटे, "
+            "पूरा दिन, outstation, रात की ड्राइव या monthly driver। अनुभवी, लाइसेंस वाले ड्राइवर, 24 घंटे। "
+            f"Call {PHONE_PRETTY}.")
+    keywords = ", ".join([
+        "driver on hire", "driver on hire Deoghar", "driver on hire Simultala", "driver on hire Jasidih",
+        "driver on hire Jhajha", "driver on hire Jamui", "driver on hire Dumka", "driver on hire Giridih",
+        "acting driver Deoghar", "call driver Deoghar", "car driver for hire", "driver for my car",
+        "temporary driver", "outstation driver for own car", "monthly driver Deoghar", "permanent driver Deoghar",
+        "night driver service", "driver service near me", "hire driver for one day",
+        "ड्राइवर हायर", "ड्राइवर चाहिए", "ड्राइवर किराए पर", "अपनी गाड़ी के लिए ड्राइवर", "देवघर ड्राइवर",
+        "Simultala Cab Service"])
+    faqs = [
+        ("ड्राइवर हायर का मतलब क्या है?",
+         "गाड़ी आपकी होती है और हम उसे चलाने के लिए अनुभवी ड्राइवर भेजते हैं &ndash; कुछ घंटों, पूरे दिन, बाहर के सफ़र या महीने भर के लिए।"),
+        ("ड्राइवर हायर की कीमत कितनी है?",
+         f"कीमत घंटे, दिन और दूरी देखकर कॉल पर बताई जाती है &ndash; कॉल करें {PHONE_PRETTY}।"),
+        ("बाहर के सफ़र में ड्राइवर का खाना और रुकना कौन देता है?",
+         "बाहर के सफ़र और रात रुकने पर ड्राइवर का खाना और रुकने का खर्च बुकिंग के समय कॉल पर तय हो जाता है।"),
+        ("क्या automatic गाड़ी के लिए भी ड्राइवर मिलेगा?",
+         "हाँ, manual और automatic दोनों तरह की गाड़ियों के लिए ड्राइवर मिलते हैं &ndash; hatchback से SUV और Innova तक।"),
+        ("क्या महीने भर के लिए परमानेंट ड्राइवर मिल सकता है?",
+         "हाँ, घर, दुकान या ऑफिस के लिए महीने के हिसाब से ड्राइवर मिलता है। समय और छुट्टी की बात कॉल पर तय होती है।"),
+    ]
+    faq_html = "".join(f'''
+          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>''' for q, a in faqs)
+    breadcrumb = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": BRAND, "item": url()},
+        {"@type": "ListItem", "position": 2, "name": "Driver on Hire", "item": canonical}]}
+    biz = business_ld(page_url=canonical)
+    service = {"@context": "https://schema.org", "@type": "Service", "serviceType": "Driver on hire",
+               "name": "Driver on Hire – Simultala Cab Service", "provider": {"@id": f"{SITE_URL}/#business"},
+               "areaServed": [{"@type": "City", "name": f"{l[0]}, {l[3]}"} for l in nearest("Deoghar", 30)],
+               "url": canonical}
+    towns = "".join(f'<li><a href="{slug(l[0])}">{l[0]}</a></li>' for l in nearest("Deoghar", 24))
+    return f'''<!DOCTYPE html>
+<html lang="hi">
+<head>
+{common_head(title, desc, keywords, canonical)}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+{ld_script(biz, service, breadcrumb, faq_ld(faqs))}
+</head>
+<body>
+
+{SPRITE}{HEADER}  <main id="top">
+    <section class="hero loc-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">{BRAND}</a> <span aria-hidden="true">/</span> Driver on Hire</nav>
+        <p class="hero__place">देवघर, सिमुलतला और 100 km तक <span class="hero__badge">10+ साल का अनुभव</span></p>
+        <h1>ड्राइवर हायर</h1>
+        <p class="loc-hero__en">Driver on Hire &ndash; your car, our driver</p>
+        <p class="hero__lede">गाड़ी है पर चलाने वाला नहीं? कुछ घंटे, पूरा दिन, बाहर का सफ़र या महीने भर के लिए &ndash; एक कॉल पर अनुभवी ड्राइवर आपके घर पहुँचेगा।</p>
+        <a class="plate" data-call href="{tel()}" aria-label="कॉल करें">
+          <span class="plate__label">ड्राइवर के लिए कॉल करें</span>
+          <span class="plate__num" data-phone-text>{PHONE_PRETTY}</span>
+        </a>
+        <div class="hero__row">
+          {WA_BTN.replace('data-wa ', 'data-wa data-msg="ड्राइवर हायर (मेरी अपनी गाड़ी)" ', 1)}
+          <p class="hero__price">कीमत <strong>कॉल पर</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap driver">
+        <div class="driver__copy">
+          <div class="head">
+            <h2>कब चाहिए ड्राइवर?</h2>
+            <p>Hourly, full day, outstation, night drive, car delivery or a monthly driver.</p>
+          </div>
+{points}
+          <p class="driver__note">बाहर के सफ़र में ड्राइवर का खाना और रुकने का खर्च बुकिंग के समय कॉल पर तय होता है।</p>
+        </div>
+{types}
+      </div>
+    </section>
+
+    <section class="section section--mist" id="faq">
+      <div class="wrap faq">
+        <div class="head">
+          <h2>ड्राइवर हायर: सवाल-जवाब</h2>
+          <p>Driver on hire FAQs</p>
+        </div>
+        <div class="faq__list">{faq_html}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="head">
+          <h2>इन जगहों पर ड्राइवर मिलता है</h2>
+          <p>Driver on hire in every town within 100 km of Deoghar and Simultala.</p>
+        </div>
+        <ul class="loc-links">{towns}<li><a href="index.html#area">सभी शहर</a></li></ul>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap final__in">
+        <h2>ड्राइवर चाहिए? अभी कॉल कीजिए।</h2>
+        <a class="plate plate--dark" data-call href="{tel()}" aria-label="कॉल करें">
+          <span class="plate__label">कॉल करें</span>
+          <span class="plate__num" data-phone-text>{PHONE_PRETTY}</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+{TAIL}'''
+
+
 # ---------------------------------------------------------------- index.html
 def patch_index():
     p = ROOT / "index.html"
@@ -572,7 +704,7 @@ def patch_index():
     title = "Simultala Cab Service | Deoghar Taxi Service, Simultala Taxi, Hansdiha Taxi &amp; Deoghar Tour Package"
     desc = ("Simultala Cab Service – देवघर और सिमुलतला से 100 km तक हर जगह टैक्सी। Deoghar taxi service, Simultala taxi, "
             "Hansdiha, Jasidih, Jhajha, Jamui, Basukinath, Dumka, Giridih, Dhanbad taxi। Deoghar tour package, बाबा धाम दर्शन, "
-            f"station pickup, airport, outstation cab, hotel booking. 10+ साल, 50+ गाड़ियाँ। ₹1500 से। Call {PHONE_PRETTY}.")
+            f"station pickup, airport, outstation cab, hotel booking, driver on hire. 10+ साल, 50+ गाड़ियाँ। ₹1500 से। Call {PHONE_PRETTY}.")
     kw_match = re.search(r'<meta name="keywords" content="(.*?)">', s)
     keywords = [k.strip() for k in (kw_match.group(1) if kw_match else "").split(",") if k.strip()]
     extra = ["Deoghar taxi service", "Simultala taxi service", "Hansdiha taxi service", "Deoghar cab service",
@@ -580,6 +712,8 @@ def patch_index():
              "Deoghar airport taxi", "AIIMS Deoghar taxi", "Jasidih to Deoghar taxi", "Deoghar to Basukinath taxi",
              "Deoghar to Patna taxi", "Deoghar to Ranchi taxi", "Deoghar to Kolkata taxi", "Deoghar to Dhanbad taxi",
              "Shravani Mela taxi", "Simultala tour package", "Parasnath tour package",
+             "Deoghar driver on hire", "Simultala driver on hire", "driver on hire near me", "acting driver Deoghar",
+             "call driver Deoghar", "monthly driver Deoghar", "outstation driver for own car", "ड्राइवर हायर", "ड्राइवर चाहिए",
              "देवघर टैक्सी सर्विस", "सिमुलतला टैक्सी सर्विस", "हंसडीहा टैक्सी सर्विस", "देवघर टूर पैकेज", "बाबा धाम टूर पैकेज"]
     extra += [f"{l[0]} taxi service" for l in LOCATIONS] + [f"{l[1]} टैक्सी" for l in LOCATIONS]
     keywords = ", ".join(dict.fromkeys(keywords + extra))
@@ -611,7 +745,8 @@ def patch_index():
         + "".join(f'<li><a href="{slug(l[0])}">{l[0]} Taxi</a></li>' for l in ls) + "</ul></div>"
         for (d, st), ls in groups.items())
     block = (f'<!-- LOC-LINKS:START -->\n        <h3 class="districts__title">देवघर और सिमुलतला से 100 km तक: शहर के हिसाब से टैक्सी</h3>\n'
-             f'        <p class="loc-tour"><a class="btn btn--ink" href="{TOUR_SLUG}">देवघर टूर पैकेज देखें</a></p>\n'
+        f'        <p class="loc-tour"><a class="btn btn--ink" href="{TOUR_SLUG}">देवघर टूर पैकेज देखें</a> '
+             f'<a class="btn btn--line" href="{DRIVER_SLUG}">ड्राइवर हायर</a></p>\n'
              f'        <div class="loc-groups">{links}\n        </div>\n        <!-- LOC-LINKS:END -->')
     if "<!-- LOC-LINKS:START -->" in s:
         s = re.sub(r"<!-- LOC-LINKS:START -->.*?<!-- LOC-LINKS:END -->", lambda m: block, s, flags=re.S)
@@ -688,7 +823,8 @@ def main():
         pages.append(slug(loc[0]))
 
     (ROOT / TOUR_SLUG).write_text(phone_fix(tour_page()), encoding="utf-8")
-    entries = [(url(), "1.0", "daily"), (url(TOUR_SLUG), "0.9", "weekly")] + [(url(p), "0.8", "weekly") for p in pages]
+    (ROOT / DRIVER_SLUG).write_text(phone_fix(driver_page()), encoding="utf-8")
+    entries = [(url(), "1.0", "daily"), (url(TOUR_SLUG), "0.9", "weekly"), (url(DRIVER_SLUG), "0.9", "weekly")] + [(url(p), "0.8", "weekly") for p in pages]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc_url, prio, freq in entries:
